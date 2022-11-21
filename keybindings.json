@@ -11,12 +11,12 @@
     },
     // right
     {
-      "keys": ["right", "ctrl+f"],
+      "keys": ["right", "ctrl+l"],
       "command": "emacs-mcx.forwardChar",
       "whens": ["editorTextFocus", "terminalFocus"] // TODO: `!suggestWidgetVisible` should be added like up/down?
     },
     {
-      "keys": ["right", "ctrl+f"],
+      "keys": ["right", "ctrl+l"],
       "command": "emacs-mcx.isearchExit",
       "when": "!config.emacs-mcx.cursorMoveOnFindWidget && editorFocus && findWidgetVisible && !replaceInputFocussed && !isComposing",
       "args": {
@@ -25,12 +25,12 @@
     },
     // left
     {
-      "keys": ["left", "ctrl+b"],
+      "keys": ["left", "ctrl+j"],
       "command": "emacs-mcx.backwardChar",
       "whens": ["editorTextFocus", "terminalFocus"]
     },
     {
-      "keys": ["left", "ctrl+b"],
+      "keys": ["left", "ctrl+j"],
       "command": "emacs-mcx.isearchExit",
       "when": "!config.emacs-mcx.cursorMoveOnFindWidget && editorFocus && findWidgetVisible && !replaceInputFocussed && !isComposing",
       "args": {
@@ -39,22 +39,22 @@
     },
     // up
     {
-      "keys": ["up", "ctrl+p"],
+      "keys": ["up", "ctrl+u"],
       "command": "emacs-mcx.previousLine",
       "whens": ["editorTextFocus && !suggestWidgetVisible", "terminalFocus"]
     },
     {
-      "keys": ["up", "ctrl+p"],
+      "keys": ["up", "ctrl+u"],
       "command": "selectPrevSuggestion",
       "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
     {
-      "keys": ["up", "ctrl+p"],
+      "keys": ["up", "ctrl+u"],
       "command": "showPrevParameterHint",
       "when": "parameterHintsMultipleSignatures && parameterHintsVisible && textInputFocus"
     },
     {
-      "keys": ["up", "ctrl+p"],
+      "keys": ["up", "ctrl+u"],
       "command": "emacs-mcx.isearchExit",
       "when": "!config.emacs-mcx.cursorMoveOnFindWidget && editorFocus && findWidgetVisible && !replaceInputFocussed && !isComposing",
       "args": {
@@ -115,12 +115,12 @@
     },
     // forward word (meta + f)
     {
-      "key": "meta+f",
+      "key": "ctrl+p",
       "command": "emacs-mcx.forwardWord",
       "when": "editorTextFocus"
     },
     {
-      "key": "meta+f",
+      "key": "ctrl+p",
       "command": "emacs-mcx.isearchExit",
       "when": "!config.emacs-mcx.cursorMoveOnFindWidget && editorFocus && findWidgetVisible && !replaceInputFocussed && !isComposing",
       "args": {
@@ -129,12 +129,12 @@
     },
     // backward word (meta + b)
     {
-      "key": "meta+b",
+      "key": "ctrl+o",
       "command": "emacs-mcx.backwardWord",
       "when": "editorTextFocus"
     },
     {
-      "key": "meta+b",
+      "key": "ctrl+o",
       "command": "emacs-mcx.isearchExit",
       "when": "!config.emacs-mcx.cursorMoveOnFindWidget && editorFocus && findWidgetVisible && !replaceInputFocussed && !isComposing",
       "args": {
@@ -171,12 +171,12 @@
     },
     // page up (meta + v)
     {
-      "keys": ["pageup", "meta+v"],
+      "keys": ["pageup", "ctrl+t"],
       "command": "emacs-mcx.scrollDownCommand",
       "when": "editorTextFocus && !suggestWidgetVisible"
     },
     {
-      "keys": ["pageup", "meta+v"],
+      "keys": ["pageup", "ctrl+t"],
       "command": "emacs-mcx.isearchExit",
       "when": "editorFocus && findWidgetVisible && !isComposing",
       "args": {
@@ -225,11 +225,11 @@
     },
     // go to line
     {
-      "keys": ["meta+g meta+g", "meta+g g"],
+      "keys": ["meta+g meta+g", "meta+l"],
       "command": "workbench.action.gotoLine"
     },
     {
-      "keys": ["meta+g meta+g", "meta+g g"],
+      "keys": ["meta+g meta+g", "meta+l"],
       "command": "emacs-mcx.isearchExit",
       "when": "editorFocus && findWidgetVisible && !isComposing",
       "args": {
@@ -257,11 +257,11 @@
       "command": "editor.action.marker.prev"
     },
     // recenter-top-bottom
-    {
-      "key": "ctrl+l",
-      "command": "emacs-mcx.recenterTopBottom",
-      "when": "editorTextFocus"
-    },
+    // {
+    //      "key": "ctrl+l",
+    //   "command": "emacs-mcx.recenterTopBottom",
+    //   "when": "editorTextFocus"
+    // },
     // i-search forward
     {
       "key": "ctrl+s",
@@ -430,16 +430,16 @@
       "command": "emacs-mcx.isearchExit",
       "when": "editorFocus && findWidgetVisible && !isComposing"
     },
-    {
-      "key": "meta+y",
-      "command": "emacs-mcx.yank-pop",
-      "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-      "key": "meta+y",
-      "command": "emacs-mcx.isearchExit",
-      "when": "editorFocus && findWidgetVisible && !isComposing"
-    },
+    // {
+    //   "key": "meta+y",
+    //   "command": "emacs-mcx.yank-pop",
+    //   "when": "editorTextFocus && !editorReadonly"
+    // },
+    // {
+    //   "key": "meta+y",
+    //   "command": "emacs-mcx.isearchExit",
+    //   "when": "editorFocus && findWidgetVisible && !isComposing"
+    // },
     {
       "key": "ctrl+o",
       "command": "lineBreakInsert",
@@ -460,11 +460,11 @@
       "command": "emacs-mcx.isearchExit",
       "when": "editorFocus && findWidgetVisible && !isComposing"
     },
-    {
-      "key": "ctrl+j",
-      "command": "emacs-mcx.newLine",
-      "when": "editorTextFocus && !editorReadonly"
-    },
+    // {
+    //   "key": "ctrl+j",
+    //   "command": "emacs-mcx.newLine",
+    //   "when": "editorTextFocus && !editorReadonly"
+    // },
     {
       "key": "ctrl+j",
       "command": "emacs-mcx.isearchExit",
@@ -497,12 +497,12 @@
       }
     },
     {
-      "keys": ["ctrl+x u", "ctrl+/", "ctrl+shift+-"],
+      "keys": ["ctrl+x u", "ctrl+/", "ctrl+shift+-", "ctrl+b"],
       "command": "undo",
       "when": "editorTextFocus && !editorReadonly"
     },
     {
-      "keys": ["ctrl+x u", "ctrl+/", "ctrl+shift+-"],
+      "keys": ["ctrl+x u", "ctrl+/", "ctrl+shift+-", "ctrl+b"],
       "command": "emacs-mcx.isearchExit",
       "when": "editorFocus && findWidgetVisible && !isComposing",
       "args": {
@@ -541,7 +541,7 @@
       "when": "editorTextFocus && !editorReadonly"
     },
     {
-      "key": "meta+l",
+      "key": "cmd+k l",
       "command": "emacs-mcx.transformToLowercase",
       "when": "editorTextFocus && !editorReadonly"
     },
@@ -551,12 +551,22 @@
       "when": "editorTextFocus && !editorReadonly"
     },
     {
-      "key": "meta+u",
+      "key": "cmd+k u",
       "command": "emacs-mcx.transformToUppercase",
       "when": "editorTextFocus && !editorReadonly"
     },
     {
-      "key": "meta+c",
+      "key": "cmd+k s",
+      "command": "emacs-mcx.transformToSnakecase",
+      "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+      "key": "cmd+k k",
+      "command": "emacs-mcx.transformToKebabcase",
+      "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+      "key": "cmd+k c",
       "command": "emacs-mcx.transformToTitlecase",
       "when": "editorTextFocus && !editorReadonly"
     },
@@ -584,7 +594,7 @@
     },
     {
       "key": "ctrl+g",
-      "command": "emacs-mcx.isearchAbort",
+      "command": "emacs-mcx.isearchExit",
       "when": "editorFocus && findWidgetVisible && !isComposing"
     },
     {

@@ -50,3 +50,33 @@ export class TransformToTitlecase extends EmacsCommand {
     await vscode.commands.executeCommand<void>("editor.action.transformToTitlecase");
   }
 }
+
+export class TransformToSnakecase extends EmacsCommand {
+  public readonly id = "transformToSnakecase";
+
+  public async execute(
+    textEditor: TextEditor,
+    isInMarkMode: boolean,
+    prefixArgument: number | undefined
+  ): Promise<void> {
+    if (!hasNonEmptySelection(textEditor)) {
+      await this.emacsController.runCommand("forwardWord");
+    }
+    await vscode.commands.executeCommand<void>("editor.action.transformToSnakecase");
+  }
+}
+
+export class TransformToKebabcase extends EmacsCommand {
+  public readonly id = "transformToKebabcase";
+
+  public async execute(
+    textEditor: TextEditor,
+    isInMarkMode: boolean,
+    prefixArgument: number | undefined
+  ): Promise<void> {
+    if (!hasNonEmptySelection(textEditor)) {
+      await this.emacsController.runCommand("forwardWord");
+    }
+    await vscode.commands.executeCommand<void>("editor.action.transformToKebabcase");
+  }
+}
