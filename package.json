@@ -2249,7 +2249,7 @@
         "when": "editorTextFocus && !suggestWidgetVisible"
       },
       {
-        "key": "ctrl+v",
+        "key": "ctrl+z",
         "command": "emacs-mcx.scrollUpCommand",
         "when": "editorTextFocus && !suggestWidgetVisible"
       },
@@ -2262,7 +2262,7 @@
         }
       },
       {
-        "key": "ctrl+v",
+        "key": "ctrl+z",
         "command": "emacs-mcx.isearchExit",
         "when": "editorFocus && findWidgetVisible && !isComposing",
         "args": {
@@ -2275,7 +2275,7 @@
         "when": "editorTextFocus && !suggestWidgetVisible"
       },
       {
-        "key": "ctrl+t",
+        "key": "ctrl+q",
         "command": "emacs-mcx.scrollDownCommand",
         "when": "editorTextFocus && !suggestWidgetVisible"
       },
@@ -2288,7 +2288,7 @@
         }
       },
       {
-        "key": "ctrl+t",
+        "key": "ctrl+q",
         "command": "emacs-mcx.isearchExit",
         "when": "editorFocus && findWidgetVisible && !isComposing",
         "args": {
@@ -2478,6 +2478,10 @@
         "when": "config.emacs-mcx.useMetaPrefixCtrlLeftBracket"
       },
       {
+        "key": "cmd+l",
+        "command": "workbench.action.gotoLine"
+      },
+      {
         "key": "alt+g alt+g",
         "command": "emacs-mcx.isearchExit",
         "when": "editorFocus && findWidgetVisible && !isComposing && !config.emacs-mcx.useMetaPrefixMacCmd",
@@ -2523,6 +2527,14 @@
         "key": "ctrl+[ l",
         "command": "emacs-mcx.isearchExit",
         "when": "editorFocus && findWidgetVisible && !isComposing && config.emacs-mcx.useMetaPrefixCtrlLeftBracket",
+        "args": {
+          "then": "workbench.action.gotoLine"
+        }
+      },
+      {
+        "key": "cmd+l",
+        "command": "emacs-mcx.isearchExit",
+        "when": "editorFocus && findWidgetVisible && !isComposing",
         "args": {
           "then": "workbench.action.gotoLine"
         }
@@ -2990,12 +3002,12 @@
         "when": "editorFocus && config.emacs-mcx.useMetaPrefixCtrlLeftBracket"
       },
       {
-        "key": "ctrl+d",
+        "key": "ctrl+f",
         "command": "emacs-mcx.deleteForwardChar",
         "when": "editorTextFocus && !editorReadonly"
       },
       {
-        "key": "ctrl+h",
+        "key": "ctrl+d",
         "command": "emacs-mcx.deleteBackwardChar",
         "when": "editorTextFocus && !editorReadonly"
       },
